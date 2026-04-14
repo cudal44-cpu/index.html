@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise! 💙</title>
+    <style>
+        body { background: #ffebee; text-align: center; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .heart { font-size: 100px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+<body>
+    <h1>Tap for a surprise...</h1>
+    <div class="heart" onclick="playRandom()">💖</div>
+    <script>
+        const clips = [
+            "Screen_Recording_20260414_221001.mp4",
+            "Screen_Recording_20260414_221105.mp4",
+            "Screen_Recording_20260414_221210.mp4",
+            "Screen_Recording_20260414_221315.mp4",
+            "Screen_Recording_20260414_221746.mp4"
+        ];
+        let audio = new Audio();
+        function playRandom() {
+            const randomClip = clips[Math.floor(Math.random() * clips.length)];
+            audio.src = randomClip;
+            audio.play().catch(() => alert("Tap again to hear it!"));
+        }
+    </script>
+</body>
+</html>
